@@ -1,0 +1,60 @@
+services:
+
+  news: 
+    build: ./news
+    volumes:
+      - ./news:/app
+      - /app/node_modules
+    ports:
+      - "3000:3000"
+    command: ["npm", "run", "dev"]
+    depends_on:
+      - db
+
+  notifications: 
+    build: ./notifications
+    volumes:
+      - ./notifications:/app
+      - /app/node_modules
+    ports:
+      - "3001:3001"
+    command: ["npm", "run", "dev"]
+    depends_on:
+      - db
+
+  posts: 
+    build: ./posts
+    volumes:
+      - ./posts:/app
+      - /app/node_modules
+    ports:
+      - "3002:3002"
+    command: ["npm", "run", "dev"]
+    depends_on:
+      - db
+
+  recomendations: 
+    build: ./recomendations
+    volumes:
+      - ./recomendations:/app
+      - /app/node_modules
+    ports:
+      - "3003:3003"
+    command: ["npm", "run", "dev"]
+    depends_on:
+      - db
+
+  db: 
+    image: postgres:15
+    restart: always
+    environment:
+      POSTGRES_USER: root       
+      POSTGRES_PASSWORD: 123123 
+      POSTGRES_DB: test         
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgre_data:/var/lib/postgresql/data
+
+volumes:
+  postgre_data:

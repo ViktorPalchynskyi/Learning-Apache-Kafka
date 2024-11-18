@@ -21,7 +21,7 @@ module.exports = {
         dialect: process.env.DB_DIALECT,
     },
     server: {
-        port: 3000,
+        port: 3001,
         allowedOrigins: [process.env.FRONTEND_ORIGIN] || [],
     },
     crypto: {

@@ -6,5 +6,5 @@ const app = require('./app');
 
 app.listen(PORT, () => {
     connectToDatabase();
-    console.log(`Server running on port: ${PORT}`);
+    console.log(`Recomendations service running on port: ${PORT}`);
 });
