@@ -32,4 +32,13 @@ async function disconnectFromDatabase() {
     }
 }
 
-module.exports = { connectToDatabase, disconnectFromDatabase };
+async function syncDatabase(force = false) {
+    try {
+        await sequelize.sync({ force }); // `force = true` удалит таблицы перед созданием
+        console.log(`Database synchronized. Force: ${force}`);
+    } catch (error) {
+        console.error('Unable to synchronize the database:', error);
+    }
+}
+
+module.exports = { connectToDatabase, disconnectFromDatabase, syncDatabase, sequelize };

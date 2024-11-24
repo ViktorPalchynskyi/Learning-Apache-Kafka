@@ -1,5 +1,5 @@
 const config = require('./config');
-const { connectToDatabase, disconnectFromDatabase } = require('./database');
+const { connectToDatabase, disconnectFromDatabase, syncDatabase, sequelize } = require('./database');
 const corsConfig = require('./corsConfig');
 
 module.exports = {
@@ -7,4 +7,6 @@ module.exports = {
     config,
     connectToDatabase,
     disconnectFromDatabase,
+    syncDatabase,
+    sequelize,
 };

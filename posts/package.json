@@ -27,9 +27,9 @@
     "_moduleAliases": {
         "@utils": "./src/utils",
         "@config": "./src/config/",
-        "@database/v1": "./src/api/v1/database",
-        "@controllers/v1": "./src/api/v1/controllers",
-        "@services/v1": "./src/api/v1/services/",
+        "@v1/database": "./src/api/v1/database",
+        "@v1/controllers": "./src/api/v1/controllers",
+        "@v1/services": "./src/api/v1/services/",
         "@app": "./src/app.js"
     }
 }
